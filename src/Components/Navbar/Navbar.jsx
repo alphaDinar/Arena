@@ -2,6 +2,8 @@ import { icon, iconFont } from '../../External/Design';
 import styles from './navbar.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { signInWithPopup } from 'firebase/auth';
+import { fireAuth, googleProvider } from '../../Firebase/Base';
 
 
 const Navbar = () => {
@@ -24,6 +26,16 @@ const Navbar = () => {
 
   const handleForm =()=>{
     navigate('/dashboard')
+  }
+  
+  const googleLogin =()=>{
+    signInWithPopup(fireAuth, googleProvider)
+    .then((res)=>{
+      navigate('/dashboard')
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
   }
 
   return (
@@ -75,7 +87,7 @@ const Navbar = () => {
         </form>
         <hr />
 
-        <legend>
+        <legend onClick={googleLogin}>
           {iconFont('fa-brands fa-google', 'black')}
           <small>Sign in with Google</small>
         </legend>
