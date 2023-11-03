@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import PlayerSidebar from "../../Components/playerSidebar/PlayerSidebar";
 import { icon } from "../../External/Design";
 import styles from '../../Styles/Player/dashboard.module.css';
 import game from '../../assets/game.png';
 import topBg from '../../assets/headRoom.avif';
 import room2 from '../../assets/room2big2.jpg';
+import PlayerSidebar from "../../Components/PlayerSidebar/PlayerSidebar";
 
 const Dashboard = () => {
   return (
