@@ -1,0 +1,42 @@
+@import url('https://fonts.cdnfonts.com/css/striker');
+@import url('https://fonts.cdnfonts.com/css/vemanem-pro-2');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+                
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
+  scroll-behavior: smooth;
+  font-size: 1.02rem;
+}
+
+:root{
+  --bigFont : 'Vemanem Pro', sans-serif;
+  --color : salmon;
+}
+
+/* body{
+  background: #ecf3ff;
+} */
+body::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 10px;
+  background: black;
+}
+body::-webkit-scrollbar-thumb{
+  background: salmon;
+  border-radius: 10px;
+}
+
+h3{
+  font-family: 'Vemanem Pro', sans-serif;                 
+}
+a{
+  color: black;
+}

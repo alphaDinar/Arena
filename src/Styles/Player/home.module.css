@@ -1,0 +1,205 @@
+.wrapper {
+  width: 90%;
+  padding: 3vh 5% 0 5%;
+  min-height: 97vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.headBox {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2fr 3fr;
+}
+
+.headBox .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem 0;
+}
+
+.headBox .left h3 {
+  font-size: 2.5rem;
+}
+
+.headBox .left a legend {
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+.headBox .left article {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
+.headBox .left article p {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.headBox .left article sup {
+  width: 10px;
+  display: block;
+  background: dodgerblue;
+  border-radius: 10px;
+}
+
+.headBox .left article a sub {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.headBox .right,
+.customBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headBox .right {
+  padding: 20px;
+}
+
+.customBox {
+  width: 100%;
+}
+
+.customBox .curve {
+  height: 280px;
+  width: 100%;
+  border-radius: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.customBox .curve .winner {
+  height: 140%;
+  position: absolute;
+  bottom: 0;
+}
+
+.lowBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #111235;
+  border-radius: 8px 8px 0 0;
+  align-items: center;
+  gap: 2rem;
+  padding: 10px;
+}
+
+.lowBox>* {
+  margin: auto;
+}
+
+.lowBox header {
+  color: rgb(184, 124, 13);
+  color: salmon;
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px dotted white;
+}
+
+.lowBox a {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.lowBox a span {
+  font-size: 1.1rem;
+}
+
+@media all and (max-width:1200px) {
+  .wrapper {
+    gap: 2rem;
+  }
+
+  .headBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .headBox .left{
+    align-items: center;
+    text-align: center;
+  }
+  .headBox .left article, .headBox .left article p {
+    flex-direction: column;
+    align-items: center;
+  }
+  .headBox .left article sup{
+    width: 50%;
+    height: 4px;
+  }
+
+  .customBox{
+    padding: 10% 0 0 0;
+  }
+  .customBox .curve {
+    width: 60%;
+  }
+  .lowBox{
+    width: calc(100% - 20px);
+  }
+}
+
+@media all and (max-width:700px) {
+  .wrapper{
+    align-items: center;
+    min-height: 94vh;
+    padding: 3vh 5%;
+  }
+  .headBox .left article {
+    width:80%;
+  }
+  .customBox{
+    padding: 5% 0 0 0;
+  }
+  .customBox .curve{
+    width: 80%;
+    height: 200px;
+  }
+  .customBox .curve .winner{
+    height: 120%;
+  }
+  .lowBox{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 15px;
+    width: auto;
+  }
+  .lowBox header{
+    border: none;
+  }
+  .lowBox a{
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+  .lowBox a legend, .lowBox a sub{
+    display: flex;
+    align-items: center;
+  }
+}

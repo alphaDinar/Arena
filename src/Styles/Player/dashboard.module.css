@@ -1,0 +1,265 @@
+.wrapper{
+  width: 90%;
+  min-height: 90vh;
+  padding: 5vh 5%;
+  display: grid;
+  grid-template-columns: 7.5fr 2.5fr;
+  background: #E5EFF4;
+  gap: 2rem;
+}
+/* .wrapper main{
+ background: salmon; 
+} */
+
+.wrapper main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topBox{
+  padding: 20px;
+  height: 250px;
+  background: ghostwhite;
+  border-radius: 25px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+.topBox section{
+  background: black;
+  border-radius: 30px;
+  background-size: cover;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+.topBox section header{
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+.topBox section header img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.topBox section header img:nth-child(2){
+  position: relative;
+  left: -15px;
+}
+.topBox section header img:nth-child(3){
+  position: relative;
+  left: -25px;
+}
+.topBox section header small{
+  position: relative;
+  left: -10px;
+}
+
+.topBox section footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.topBox section footer p{
+  display: flex;
+  flex-direction: column;
+}
+.topBox section footer p span, .topBox section footer p span small{
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--color);
+  font-family: var(--bigFont);
+}
+.topBox section footer p strong{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.topBox section footer p legend{
+  font-size: 1.5rem;
+  padding: 0px 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.377);
+}
+
+.topBox .imgBox{
+  bottom: 0;
+  right: 0;
+  width: 270px;
+  position: absolute;
+}
+
+.lowBox{
+  width: 100%;
+  /* height: 30vh; */
+  /* background: palevioletred; */
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 2.5fr 7.5fr ;
+}
+
+.lowBox nav{
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  /* background: black; */
+}
+.lowBox nav a{
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  background: white;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* background: dodgerblue; */
+}
+.lowBox nav a legend{
+  background: dodgerblue;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* padding: 10px 0; */
+  justify-content: center;
+}
+.lowBox nav a legend i{
+  rotate: -90deg;
+  font-size: 3rem;
+  /* font-weight: 600; */
+  color: wheat;
+}
+.lowBox nav a p{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+.lowBox nav a p strong{
+  color: var(--color);
+}
+.lowBox nav a p button{
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: white;
+  background: #5AD5D3;
+  cursor: pointer;
+}
+.lowBox nav a p button i{
+  font-size: 1rem;
+}
+
+/* .roomBox{
+  border: 2px solid darkgray;
+} */
+
+.sidePanel{
+  background: skyblue;
+}
+
+
+.roomBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.room{
+  /* background-size: cover; */
+  display: block;
+  padding: 10px;
+  height: 140px;
+  border-radius: 10px;
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* background: #111235; */
+  background-position: center;
+  background-size: cover;
+}
+
+.room {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.room legend {
+  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+}
+
+.room legend sub {
+  font-size: 1rem;
+  width: 18px;
+  height: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  rotate: -40deg;
+}
+
+.room p {
+  display: flex;
+  flex-direction: column;
+}
+
+.room p small{
+  display: flex;
+  color: var(--color);
+  align-items: center;
+  /* font-size: 0.7rem; */
+}
+.room p small i{
+  font-size: 1.2rem;
+}
+.room p span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.room header {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  position: relative;
+  /* border: 1px solid white; */
+}
+
+.room header sub {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  display: block;
+  background: springgreen;
+  border-radius: 50%;
+  top: 0;
+  left: 50px;
+}
+
+.room img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
