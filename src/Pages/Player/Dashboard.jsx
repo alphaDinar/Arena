@@ -27,7 +27,7 @@ const Dashboard = () => {
 
   return (
     <section className={styles.dashboard}>
-      <section className="banner"></section>
+      <section className={styles.banner}></section>
       <main>
         <TopNav/>
 
@@ -83,7 +83,7 @@ const Dashboard = () => {
                   </strong>
                 </p>
 
-                <nav className="activeBox">
+                <nav className={styles.activeBox}>
                   <img src={player} />
                   <img src={player} />
                   <img src={player} />
@@ -100,6 +100,7 @@ const Dashboard = () => {
 
         <section className={styles.roomBoxHolder}>
           <header>
+            <legend>Active</legend>
             <legend>Top</legend>
             <legend>Upcoming</legend>
             <legend>La Liga</legend>

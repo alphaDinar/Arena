@@ -52,6 +52,43 @@
   font-size: 1.1rem;
 }
 
+.registerForm form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.registerForm form p {
+  width: 100%;
+}
+
+.registerForm form small {
+  color: white;
+  cursor: pointer;
+}
+
+
+.registerForm form input {
+  border: 1px solid var(--color);
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: var(--color);
+  width: calc(100% - 30px);
+  background: transparent;
+}
+
+.registerForm form button {
+  font-family: var(--bigFont);
+  background: var(--color);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
 
 .registerForm legend{
@@ -91,7 +128,7 @@
   .navbar nav{
     position: fixed;
     left: 0;
-    background: #111235;
+    background: var(--navBar);
     color: white;
     gap: 0.5rem 0;
     padding: 10px 0;

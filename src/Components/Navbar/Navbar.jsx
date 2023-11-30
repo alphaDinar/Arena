@@ -8,7 +8,7 @@ import { fireAuth, googleProvider } from '../../Firebase/Base';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [menuToggled, setMenuToggled] = useState('');
+  const [menuToggled, setMenuToggled] = useState(false);
   const [loginMode, setLoginMode] = useState(true);
   const [formBoxToggled, setFormBoxToggled] = useState(false);
 

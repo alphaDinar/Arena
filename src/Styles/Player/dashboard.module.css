@@ -3,7 +3,16 @@
   min-height: 100vh;
 }
 
-
+.banner {
+  background: skyblue;
+  width: 100%;
+  height: 320px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--blueBox);
+  z-index: 1;
+}
 
 .dashboard main {
   z-index: 20;
@@ -138,8 +147,18 @@
 .featuredBox div article nav sub{
   width: 50px;
   height: 25px;
-  border: 1px solid black;
+  box-shadow: var(--el_shadow);
   border-radius: 40px;
+}
+
+.featuredBox div article nav sub:nth-child(1){
+  background: skyblue;
+}
+.featuredBox div article nav sub:nth-child(2){
+  background: wheat;
+}
+.featuredBox div article nav sub:nth-child(3){
+  background: wheat;
 }
 
 .featuredBox legend{
@@ -163,14 +182,47 @@
   font-size: 1.8rem;
 }
 
+.activeBox{
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.activeBox img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  background: salmon;
+  border-radius: 50%;
+}
+.activeBox > *:nth-child(1){
+  left: 20px;
+  z-index: 30;
+  position: relative;
+}
+.activeBox > *:nth-child(2){
+  left: 10px;
+  z-index: 20;
+  position: relative;
+}
+.activeBox > *:nth-child(3){
+  position: relative;
+  left: -0;
+  z-index: 15;
+}
+.activeBox > *:nth-child(4){
+  position: relative;
+  left: -10px;
+  z-index: 10;
+}
+
 .roomBoxHolder{
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   gap: 2rem;
-  background: white;
   padding: 30px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: rgba(255, 255, 255, 0.256);
 }
 
 .roomBoxHolder header{
@@ -190,6 +242,9 @@
   min-width: max-content;
 }
 
+
+
+
 @media all and (max-width:1150px){
   .profileBox{
     display: none;
@@ -208,14 +263,24 @@
     width: calc(100% - 40px);
     align-items: center;
     flex-direction: column;
+    position: relative;
+    gap: 0.3rem;
   }
   .featuredBox div article{
     align-items: center;
     gap: 0;
   }
+  .featuredBox header{
+    position: revert;
+  }
   .featuredBox header img{
-    position: relative;
+    position: absolute;
     height: 80px;
+    width: 80px;
+    object-fit: contain;
+    top: -30px;
+    left: -30px;
+    margin: revert;
   }
   .featuredBox div{
     align-items: center;
@@ -244,4 +309,31 @@
     gap: 0.5rem;
   }
   
+}
+
+@media all and (max-width:650px){
+  .activeBox >*:nth-child(1), .activeBox >*:nth-child(2), .activeBox >*:nth-child(3), .activeBox >*:nth-child(4){
+    position: revert;
+    left: revert;
+  }
+}
+
+@media all and (max-width:500px){
+  .roomBoxHolder{
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .featuredBox header img{
+    border-radius: 50%;
+    background: salmon;
+    height: 60px;
+    left: -10px;
+    top: -10px;
+    width: 60px;
+  }
+  .featuredBox div article small,.featuredBox div article p{
+    display: none;
+  }
 }

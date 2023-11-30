@@ -19,7 +19,11 @@
 :root {
   --bigFont: 'Vemanem Pro', sans-serif;
   --color: salmon;
+  --el_shadow : rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --navBar : #111235;
+  --blueBox : #3f4cf3;
 }
+
 
 /* body{
   background: #ecf3ff;
@@ -52,18 +56,6 @@ a {
   position: relative;
 }
 
-.banner {
-  background: skyblue;
-  width: 100%;
-  height: 320px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #3f4cf3;
-  z-index: 1;
-}
-
-
 h3 sub {
   display: block;
   width: 50px;
@@ -71,45 +63,25 @@ h3 sub {
   background: var(--color);
 }
 
-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  /* background: rgba(0, 0, 0, 0.897); */
-}
-
-form p {
-  width: 100%;
-}
-
-form small {
-  color: white;
-  cursor: pointer;
-}
 
 hr {
   width: 100%;
   border-top: 1px solid white;
 }
 
-form input {
-  border: 1px solid var(--color);
-  border-radius: 10px;
-  padding: 10px 15px;
-  color: var(--color);
-  width: calc(100% - 30px);
-  background: transparent;
+
+.blueBox{
+  background: var(--blueBox);
+  width: 90%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3vh 5%;
 }
 
-form button {
-  font-family: var(--bigFont);
-  background: var(--color);
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.blueBox h3{
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }

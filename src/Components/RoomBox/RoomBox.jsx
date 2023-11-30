@@ -68,7 +68,7 @@ const RoomBox = () => {
             <legend>00 : 25 : 10</legend>
             <strong>GH₵ 5,000</strong>
           </p>
-          <nav className='activeBox'>
+          <nav>
             <img src={player} alt="" />
             <img src={player} alt="" />
             <img src={player} alt="" />

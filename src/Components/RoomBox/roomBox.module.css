@@ -5,11 +5,18 @@
 }
 .room{
   border: 1px solid darkgray;
+  /* border:  ; */
   display: flex;
   border-radius: 15px;
   justify-content: space-between;
   padding: 25px;
   background: white;
+  /* background: #3f4cf3; */
+  /* background: salmon; */
+  /* color: white; */
+  /* background: ghostwhite; */
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .room a{
@@ -23,17 +30,10 @@
   color: white;
   transition: 0.3s ease;
 }
-
-.room nav{
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  display: none;
-}
 .room .left, .room .right{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: space-between;
 }
 .room .left{
@@ -51,8 +51,18 @@
   display: block;
   width: 40px;
   height: 20px;
-  border: 1px solid black;
   border-radius: 40px;
+  box-shadow: var(--el_shadow);
+}
+
+.room ul sub:nth-child(1){
+  background: skyblue;
+}
+.room ul sub:nth-child(2){
+  background: wheat;
+}
+.room ul sub:nth-child(3){
+  background: wheat;
 }
 
 .room sup{
@@ -70,12 +80,24 @@
   color: darkgray;
 }
 
+
+.room nav{
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
 .room nav img{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
   object-fit: contain;
   background: salmon;
+}
+.room nav img:nth-child(2){
+  background: wheat;
+}
+.room nav img:nth-child(3){
+  background: skyblue;
 }
 
 .room legend{
@@ -107,5 +129,21 @@
 @media all and (max-width:800px){
   .roomBox{
     grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width:400px){
+  .room{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .room .left{
+    gap: 1rem;
+  }
+  .room .right{
+    /* display: flex; */
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 }
