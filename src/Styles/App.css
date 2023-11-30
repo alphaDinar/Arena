@@ -1,0 +1,62 @@
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topNav nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.topNav nav a {
+  color: white;
+}
+
+.topNav img{
+  height: 50px;
+  width: 50px;
+}
+
+.activeBox{
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+.activeBox img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  background: salmon;
+  border-radius: 50%;
+}
+.activeBox > *:nth-child(1){
+  left: 20px;
+  z-index: 30;
+  position: relative;
+}
+.activeBox > *:nth-child(2){
+  left: 10px;
+  z-index: 20;
+  position: relative;
+}
+.activeBox > *:nth-child(3){
+  position: relative;
+  left: -0;
+  z-index: 15;
+}
+.activeBox > *:nth-child(4){
+  position: relative;
+  left: -10px;
+  z-index: 10;
+}
+
+
+@media all and (max-width:650px){
+  .activeBox >*:nth-child(1), .activeBox >*:nth-child(2), .activeBox >*:nth-child(3), .activeBox >*:nth-child(4){
+    position: revert;
+    left: revert;
+  }
+}

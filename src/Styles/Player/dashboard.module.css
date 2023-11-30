@@ -1,264 +1,247 @@
-.wrapper{
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+
+.dashboard main {
+  z-index: 20;
   width: 90%;
-  min-height: 90vh;
-  padding: 5vh 5%;
-  display: grid;
-  grid-template-columns: 7.5fr 2.5fr;
-  background: #E5EFF4;
+  padding: 3vh 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
-/* .wrapper main{
- background: salmon; 
-} */
 
-.wrapper main{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.topBox{
-  padding: 20px;
-  height: 250px;
-  background: ghostwhite;
-  border-radius: 25px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 300px;
-}
-.topBox section{
-  background: black;
-  border-radius: 30px;
-  background-size: cover;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-}
-.topBox section header{
-  display: flex;
-  gap: 0.2rem;
-  align-items: center;
-}
-.topBox section header img{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-.topBox section header img:nth-child(2){
-  position: relative;
-  left: -15px;
-}
-.topBox section header img:nth-child(3){
-  position: relative;
-  left: -25px;
-}
-.topBox section header small{
-  position: relative;
-  left: -10px;
-}
-
-.topBox section footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.topBox section footer p{
-  display: flex;
-  flex-direction: column;
-}
-.topBox section footer p span, .topBox section footer p span small{
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  color: var(--color);
-  font-family: var(--bigFont);
-}
-.topBox section footer p strong{
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-.topBox section footer p legend{
-  font-size: 1.5rem;
-  padding: 0px 8px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.377);
-}
-
-.topBox .imgBox{
-  bottom: 0;
-  right: 0;
-  width: 270px;
-  position: absolute;
-}
-
-.lowBox{
+.lowBox {
   width: 100%;
-  /* height: 30vh; */
-  /* background: palevioletred; */
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 2.5fr 7.5fr ;
-}
-
-.lowBox nav{
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
-  /* background: black; */
-}
-.lowBox nav a{
-  width: 100%;
-  border-radius: 20px;
-  display: flex;
-  overflow: hidden;
-  background: white;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  /* background: dodgerblue; */
-}
-.lowBox nav a legend{
-  background: dodgerblue;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  /* padding: 10px 0; */
-  justify-content: center;
-}
-.lowBox nav a legend i{
-  rotate: -90deg;
-  font-size: 3rem;
-  /* font-weight: 600; */
-  color: wheat;
-}
-.lowBox nav a p{
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  grid-template-columns: 2fr 8fr;
   align-items: flex-start;
 }
-.lowBox nav a p strong{
-  color: var(--color);
+
+.profileBox {
+  display: flex;
+  width: max-content;
+  justify-content: flex-start;
 }
-.lowBox nav a p button{
-  font-size: 1rem;
+
+.profileBox header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.profileBox header img {
+  width: 70px;
+  height: 70px;
+  background: black;
+  border-radius: 50%;
+}
+
+.profileBox header article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid wheat;
+}
+
+.profileBox header div {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 8px 15px;
-  border-radius: 10px;
-  color: white;
-  background: #5AD5D3;
-  cursor: pointer;
-}
-.lowBox nav a p button i{
-  font-size: 1rem;
-}
-
-/* .roomBox{
-  border: 2px solid darkgray;
-} */
-
-.sidePanel{
-  background: skyblue;
-}
-
-
-.roomBox{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  flex-wrap: wrap;
-}
-.room{
-  /* background-size: cover; */
-  display: block;
-  padding: 10px;
-  height: 140px;
-  border-radius: 10px;
-  /* background-size: cover; */
-  /* background-position: center; */
-  /* background: #111235; */
-  background-position: center;
-  background-size: cover;
 }
 
-.room {
-  color: white;
+.profileBox header div p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileBox header div p strong {
+  font-size: 1.3rem;
+}
+
+
+.gameBox {
+  border-radius: 10px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.featuredBox {
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+  height: 280px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.featuredBox header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.featuredBox header img {
+  position: absolute;
+  margin: auto;
+  height: 330px;
+  bottom: 0;
+}
+
+.featuredBox div {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 10px;
-  background-size: cover;
 }
-
-.room legend {
-  display: block;
+.featuredBox div nav{
   display: flex;
-  align-items: center;
   gap: 0.3rem;
-  justify-content: flex-end;
-  font-size: 0.9rem;
-}
-
-.room legend sub {
-  font-size: 1rem;
-  width: 18px;
-  height: 18px;
-  font-weight: 600;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: white;
-  color: black;
-  rotate: -40deg;
+}
+.featuredBox div nav img{
+  width: 30px;
+  height: 30px;
 }
 
-.room p {
+.featuredBox div article{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.featuredBox div article small{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.featuredBox div article p{
   display: flex;
   flex-direction: column;
 }
 
-.room p small{
-  display: flex;
-  color: var(--color);
-  align-items: center;
-  /* font-size: 0.7rem; */
-}
-.room p small i{
-  font-size: 1.2rem;
-}
-.room p span {
+.featuredBox div article p span{
   font-size: 1.5rem;
-  font-weight: 600;
+}
+.featuredBox div article p span:nth-child(2){
+  color: darkgray;
+}
+.featuredBox div article nav sub{
+  width: 50px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 40px;
 }
 
-.room header {
+.featuredBox legend{
+  background: rgba(0, 0, 0, 0.299);
+  padding: 3px 10px;
+  border-radius: 40px;
+  color: white;
   display: flex;
   align-items: center;
-  /* justify-content: flex-start; */
-  position: relative;
-  /* border: 1px solid white; */
+}
+.featuredBox > *:nth-last-child(1){
+  display: flex;
+  align-items: flex-end;
+}
+.featuredBox > *:nth-last-child(1) p{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.featuredBox div strong{
+  font-size: 1.8rem;
 }
 
-.room header sub {
-  position: absolute;
-  height: 5px;
-  width: 5px;
-  display: block;
-  background: springgreen;
-  border-radius: 50%;
-  top: 0;
-  left: 50px;
+.roomBoxHolder{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 2rem;
+  background: white;
+  padding: 30px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.room img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+.roomBoxHolder header{
+  display: flex;
+  gap: 2.5rem;
+  overflow-x: auto;
+}
+.roomBoxHolder header::-webkit-scrollbar{
+  display: none;
+}
+
+.roomBoxHolder header legend{
+  padding: 3px 10px;
+  border: 1px solid darkgray;
+  border-radius: 40px;
+  background: white;
+  min-width: max-content;
+}
+
+@media all and (max-width:1150px){
+  .profileBox{
+    display: none;
+  }
+  .lowBox{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media all and (max-width:650px){
+  .featuredBox{
+    display: flex;
+    height: auto;
+    padding: 20px;
+    width: calc(100% - 40px);
+    align-items: center;
+    flex-direction: column;
+  }
+  .featuredBox div article{
+    align-items: center;
+    gap: 0;
+  }
+  .featuredBox header img{
+    position: relative;
+    height: 80px;
+  }
+  .featuredBox div{
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+  }
+  .featuredBox > *:nth-last-child(1){
+    align-items: center;
+  }
+  .featuredBox > *:nth-last-child(1) p{
+    align-items: center;
+  }
+  .featuredBox div strong{
+    font-size: 1.3rem;
+  }
+  .featuredBox div article p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .featuredBox div article p span{
+    font-size: 1rem;
+  }
+  .topNav nav{
+    gap: 0.5rem;
+  }
+  
 }

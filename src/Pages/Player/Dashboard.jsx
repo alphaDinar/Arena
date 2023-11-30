@@ -1,88 +1,114 @@
-import { Link } from "react-router-dom";
-import { icon } from "../../External/Design";
 import styles from '../../Styles/Player/dashboard.module.css';
+import bg1 from '../../assets/bg1.webp';
+import dash from '../../assets/headRoom.avif';
 import game from '../../assets/game.png';
-import topBg from '../../assets/headRoom.avif';
-import room2 from '../../assets/room2big2.jpg';
-import PlayerSidebar from "../../Components/PlayerSidebar/PlayerSidebar";
+import player from '../../assets/player.png';
+import logo1 from '../../assets/logo1.png';
+import RoomBox from '../../Components/RoomBox/RoomBox';
+import { icon } from '../../External/Design';
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { fireAuth } from '../../Firebase/Base';
+import TopNav from '../../Components/TopNav/TopNav';
 
 const Dashboard = () => {
+  const [username, setUsername] = useState();
+
+  useEffect(() => {
+    onAuthStateChanged(fireAuth, (user) => {
+      if (user) {
+        if (user.displayName) {
+          setUsername(user.displayName);
+        }
+      }
+    })
+  }, [])
+
+
   return (
-    <section>
-      <PlayerSidebar />
-      <section className={styles.wrapper}>
-        <main>
-          <section className={styles.topBox}>
-            <section style={{ backgroundImage: `url(${topBg})` }}>
-              <header>
-                <img src={topBg} />
-                <img src={game} />
-                <img src={game} />
+    <section className={styles.dashboard}>
+      <section className="banner"></section>
+      <main>
+        <TopNav/>
 
-                <small>+ 10 more</small>
-              </header>
-
-              <footer>
+        <section className={styles.lowBox}>
+          <section className={styles.profileBox}>
+            <header>
+              <article>
+                <img src={game} alt="" />
+                <span>{username || 'Bright781'} </span>
+                <small>Legend</small>
+              </article>
+              <div>
                 <p>
-                  <span>{icon('trophy')} <small>Prize</small> </span>
-                  <strong>Ghc 80,000</strong>
+                  <strong>43</strong>
+                  <span>Active Rooms</span>
                 </p>
                 <p>
-                  <span>Ends In</span>
-                  <legend>23 : 20 : 15</legend>
+                  <strong>43</strong>
+                  <span>Active Rooms</span>
                 </p>
-              </footer>
-            </section>
-            <img src={game} className={styles.imgBox} />
+              </div>
+            </header>
           </section>
+          <section className={styles.gameBox}>
+            <section className={styles.featuredBox}>
+              <div>
+                <nav>
+                  {icon('sports_esports')}
+                  {icon('tactic')}
+                </nav>
 
-          <section className={styles.lowBox}>
-            <nav>
-              <Link>
-                <legend>
-                  {icon('stadia_controller')}
-                </legend>
-                <p>
-                  <strong>Join a Room</strong>
-                  <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</small>
-                  <button type="">{icon('north_east')}</button>
-                </p>
-              </Link>
-              <Link>
-                <legend>
-                  {icon('group')}
-                </legend>
-                <p>
-                  <strong>Create a Room</strong>
-                  <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</small>
-                  <button type="">{icon('north_east')}</button>
-                </p>
-              </Link>
-            </nav>
-            <section className={styles.roomBox}>
-              {[0, 0, 0, 0, 0].map((el) => (
-                <Link className={styles.room} style={{ backgroundImage: `url(${room2})` }}>
-                  <header>
-                    <img src={game} />
-                    <img src={game} style={{ position: 'relative', left: '-10px' }} />
-                    <img src={game} style={{ position: 'relative', left: '-20px' }} />
-                    <small style={{ position: 'relative', left: '-15px', color: 'wheat' }}> + 10</small>
-                    <sub></sub>
-                  </header>
-                  <small>Blazers</small>
+                <article>
+                  <small>La Liga</small>
                   <p>
-                    <small>{icon('trophy')} <small style={{fontFamily:'var(--bigFont)', fontSize:'0.9rem'}}>Prize</small></small>
-                    <span>GH₵ 4,500</span>
+                    <span>Real Madrid</span>
+                    <span>Athletico Madrid</span>
                   </p>
-                </Link>
-              ))}
-            </section>
-          </section>
-        </main>
-        <section className={styles.sidePanel}>
+                  <nav>
+                    <sub></sub>
+                    <sub></sub>
+                    <sub></sub>
+                  </nav>
+                </article>
+              </div>
+              <header>
+                <img src={player} alt="" />
+              </header>
+              <div>
+                <p>
+                  <legend>00 : 12 : 29 </legend>
+                  <strong>
+                    GHc 4,500
+                  </strong>
+                </p>
 
+                <nav className="activeBox">
+                  <img src={player} />
+                  <img src={player} />
+                  <img src={player} />
+                  <img src={player} />
+                  <small>+ 4 more</small>
+                </nav>
+              </div>
+            </section>
+
+
+
+          </section>
         </section>
-      </section>
+
+        <section className={styles.roomBoxHolder}>
+          <header>
+            <legend>Top</legend>
+            <legend>Upcoming</legend>
+            <legend>La Liga</legend>
+            <legend>Premier League</legend>
+            <legend>Serie A</legend>
+          </header>
+          <RoomBox />
+        </section>
+      </main>
     </section>
   );
 }
